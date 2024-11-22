@@ -1,0 +1,30 @@
+{
+  "name": "console-enhance",
+  "version": "1.0.0",
+  "description": "Enhanced console.log with variable names, types, and memory tracking",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "console",
+    "logging",
+    "debugging",
+    "development"
+  ],
+  "author": "Ayush Kavad",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}
