@@ -34,10 +34,19 @@ export class Logger {
   }
 
   static memory(value: any): void {
-    const beforeMem = MemoryUtils.getMemoryUsage();
+    MemoryUtils.startMemoryTracking();
     this.log(value);
-    const memoryImpact = MemoryUtils.getMemoryDiff();
-    console.log(chalk.gray(`Memory impact: ${memoryImpact}MB`));
+
+    // Force garbage collection if available (Node.js with --expose-gc flag)
+    if (global.gc) {
+      global.gc();
+    }
+
+    // Small delay to allow memory to settle
+    setTimeout(() => {
+      const memoryImpact = MemoryUtils.getMemoryDiff();
+      console.log(chalk.gray(`Memory impact: ${memoryImpact}MB`));
+    }, 100);
   }
 
   static configure(options: LogOptions): void {
