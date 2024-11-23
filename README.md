@@ -31,16 +31,7 @@ import { log } from "console-enhance";
 // Basic logging
 log("Hello, World!");
 // Output: [2024-03-21 10:30:45] Hello, World!
-
-// Log levels
-log.info("Server starting on port 3000");
-log.warn("High memory usage detected");
-log.error("Database connection failed");
-log.success("Deployment completed successfully");
-log.debug("Current state:", { users: 100, active: 50 });
 ```
-
-## 📚 Usage Guide
 
 ### ⏱️ Performance Timing
 
@@ -57,10 +48,7 @@ log.timeEnd("database-query");
 ```typescript
 // Track memory usage
 log.memory();
-// Output: [10:30:45] Memory Usage:
-//   - Heap: 4.5 MB (40% used)
-//   - RSS: 18.2 MB
-//   - External: 1.1 MB
+//Output: Memory impact: 0MB
 ```
 
 ### 🔍 Debug with Stack Traces
@@ -90,14 +78,9 @@ log.configure({
 
 ### Log Levels
 
-| Method                 | Description      | Use Case                     |
-| ---------------------- | ---------------- | ---------------------------- |
-| `log(message)`         | Standard logging | General purpose logging      |
-| `log.info(message)`    | Information      | Status updates, general info |
-| `log.warn(message)`    | Warnings         | Non-critical issues          |
-| `log.error(message)`   | Errors           | Critical issues, exceptions  |
-| `log.success(message)` | Success          | Completed operations         |
-| `log.debug(message)`   | Debug            | Development debugging        |
+| Method         | Description      | Use Case                |
+| -------------- | ---------------- | ----------------------- |
+| `log(message)` | Standard logging | General purpose logging |
 
 ### Utility Methods
 
